@@ -1,5 +1,6 @@
 import { IoBagOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
+import Link from "next/link";
 export default function Navbar() {
   return (
     <>
@@ -7,7 +8,9 @@ export default function Navbar() {
         <h2 className="text-xl font-bold">Ladies Haat</h2>
         <div className="flex gap-8">
           <CiSearch size={30} />
-          <IoBagOutline size={30} />
+          <Link href="/cart">
+            <IoBagOutline size={30} />
+          </Link>
         </div>
       </nav>
     </>

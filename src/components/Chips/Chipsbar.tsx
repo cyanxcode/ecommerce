@@ -3,7 +3,7 @@ import Chips from "./Chips";
 export default function Chipsbar() {
   return (
     <>
-      <div className="flex gap-4 m-6 overflow-x-auto scrollbar h-10">
+      <div className="flex gap-4 m-6 overflow-x-auto scrollbar h-12">
         <Chips>Mens</Chips>
         <Chips>Womens</Chips>
         <Chips>Kids</Chips>
