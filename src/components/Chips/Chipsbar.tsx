@@ -4,12 +4,11 @@ export default function Chipsbar() {
   return (
     <>
       <div className="flex gap-4 m-6 overflow-x-auto scrollbar h-12">
-        <Chips>Mens</Chips>
-        <Chips>Womens</Chips>
-        <Chips>Kids</Chips>
-        <Chips>Oversized</Chips>
-        <Chips>Bottom</Chips>
-        <Chips>Shoes</Chips>
+        <Chips next="Mens">Mens</Chips>
+        <Chips next="Womens">Womens</Chips>
+        <Chips next="Kids">Kids</Chips>
+        <Chips next="Oversized">Oversized</Chips>
+        <Chips next="Shoes">Shoes</Chips>
       </div>
     </>
   );
