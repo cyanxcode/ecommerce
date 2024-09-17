@@ -6,7 +6,7 @@ export default function List() {
   return (
     <>
       <div className="w-full h-16 flex items-center gap-12 justify-between border-b border-zinc-300 px-10 ">
-        <Link href="/">
+        <Link href="/category">
           <IoArrowBack size={25} />
         </Link>
         <Link href="/cart">

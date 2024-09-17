@@ -11,7 +11,7 @@ export default function ProductImage() {
           align: "start",
           loop: false,
         }}
-        className="w-[34rem]"
+        className="w-full sm:w-[18rem] md:w-[24rem] cursor-grab"
       >
         <CarouselContent className="">
           <CarouselItem className="bg-blue-500 aspect-square">
