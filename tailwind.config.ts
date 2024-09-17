@@ -17,7 +17,11 @@ const config = {
         "2xl": "1400px",
       },
     },
-    extend: {
+    extend: { 
+      gridTemplateColumns: {
+      'auto-fill-200': 'repeat(auto-fill, minmax(200px, 1fr))',
+      'auto-fit-200': 'repeat(auto-fit, minmax(200px, 1fr))',
+    },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

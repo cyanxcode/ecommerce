@@ -4,7 +4,7 @@ export default function Item() {
   return (
     <>
       <Link href="/Items/1">
-        <div className="flex flex-col w-56 aspect-[3/4]">
+        <div className="flex flex-col w-full sm:w-56 aspect-[3/4]">
           <img
             src="/public/images/BLACK.jpg"
             alt="Tshirt"

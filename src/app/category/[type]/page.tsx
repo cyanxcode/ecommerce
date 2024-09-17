@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { IoArrowBack, IoBagOutline } from "react-icons/io5";
 import Item from "./Item";
+import Footer from "@/components/Footer";
 export default function List() {
   return (
     <>
@@ -14,11 +15,17 @@ export default function List() {
       </div>
 
       <h2 className="text-3xl font-semibold m-10">Oversized Tshirts</h2>
-      <div className="grid gap-10 grid-col">
+
+      <div className=" grid grid-cols-2 sm:grid-cols-auto-fill-200 justify-evenly gap-10 flex-wrap px-10">
+        <Item />
+        <Item />
+        <Item />
+        <Item />
         <Item />
         <Item />
         <Item />
       </div>
+      <Footer />
     </>
   );
 }
