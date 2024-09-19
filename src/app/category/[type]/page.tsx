@@ -41,8 +41,8 @@ export default function List() {
       <div className=" grid grid-cols-2 sm:grid-cols-auto-fill-200 justify-evenly gap-10 flex-wrap px-10">
         {products.map((x: any) => {
           return (
-            <Link href={`/Items/${x.title}?id=${JSON.stringify(x)}`}>
-              <Item key={x} title={x.title} price={x.price} images={x.images} />
+            <Link key={x} href={`/Items/${x.title}?id=${JSON.stringify(x)}`}>
+              <Item title={x.title} price={x.price} images={x.images} />
             </Link>
           );
         })}

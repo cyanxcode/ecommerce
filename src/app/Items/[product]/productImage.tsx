@@ -20,7 +20,7 @@ export default function ProductImage({ images }: Props) {
           {images.map((image) => {
             return (
               <>
-                <CarouselItem className="aspect-square">
+                <CarouselItem className="aspect-square" key={image}>
                   <img
                     src={`https://firebasestorage.googleapis.com/v0/b/ladieshaat-4fffd.appspot.com/o/${image}?alt=media&token=be38e17e-643b-49e2-908d-cf0f1864690b`}
                     className=""
