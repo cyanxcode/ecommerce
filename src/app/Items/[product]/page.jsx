@@ -10,15 +10,15 @@ export default function Product() {
   const searchParams = useSearchParams();
 
   const id = searchParams.get("id");
-  const data = JSON.parse(id);
+    const data = JSON.parse(id);
+    const title = data.title;
+    const price = data.price;
+    const description = data.description;
+    const type = data.type;
+    const fabric = data.fabric;
+    const color = data.color;
+    const images = data.images;
 
-  const title = data.title;
-  const price = data.price;
-  const description = data.description;
-  const type = data.type;
-  const fabric = data.fabric;
-  const color = data.color;
-  const images = data.images;
   return (
     <>
       <div className="w-full cursor-default h-16 flex items-center gap-12 justify-between border-b border-zinc-300 px-10 text-2xl font-semibold">
