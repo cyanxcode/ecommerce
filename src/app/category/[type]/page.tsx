@@ -1,12 +1,34 @@
+"use client";
 import Link from "next/link";
 import { IoArrowBack, IoBagOutline } from "react-icons/io5";
 import Item from "./Item";
 import Footer from "@/components/Footer";
+import { useSearchParams } from "next/navigation";
+import { db, app } from "@/lib/firebase";
+import { getDocs, collection } from "firebase/firestore";
+import { useEffect, useState } from "react";
 export default function List() {
+  const searchParams = useSearchParams();
+
+  const title = searchParams.get("type");
+  const [products, setProducts] = useState<any>([]);
+  useEffect(() => {
+    getProduct();
+  }, []);
+  const getProduct = async () => {
+    const querySnapshot = await getDocs(collection(db, `oversized`));
+
+    const productData = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    setProducts(productData);
+  };
+
   return (
     <>
       <div className="w-full h-16 flex items-center gap-12 justify-between border-b border-zinc-300 px-10 ">
-        <Link href="/category">
+        <Link href="/">
           <IoArrowBack size={25} />
         </Link>
         <Link href="/cart">
@@ -14,16 +36,16 @@ export default function List() {
         </Link>
       </div>
 
-      <h2 className="text-3xl font-semibold m-10">Oversized Tshirts</h2>
+      <h2 className="text-3xl font-semibold m-10">{title}</h2>
 
       <div className=" grid grid-cols-2 sm:grid-cols-auto-fill-200 justify-evenly gap-10 flex-wrap px-10">
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        {products.map((x: any) => {
+          return (
+            <Link href={`/Items/${x.title}?id=${JSON.stringify(x)}`}>
+              <Item key={x} title={x.title} price={x.price} images={x.images} />
+            </Link>
+          );
+        })}
       </div>
       <Footer />
     </>

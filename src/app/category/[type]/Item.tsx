@@ -1,21 +1,23 @@
-import Link from "next/link";
+interface Props {
+  title: string;
+  price: number;
+  images: string[];
+}
 
-export default function Item() {
+export default function Item({ title, price, images }: Props) {
   return (
     <>
-      <Link href="/Items/1">
-        <div className="flex flex-col w-full sm:w-56 aspect-[3/4]">
-          <img
-            src="/public/images/BLACK.jpg"
-            alt="Tshirt"
-            className="w-full aspect-square bg-red-500"
-          />
-          <div className="px-2 mt-2">
-            <h2 className="text-xl font-medium">Oversized Tshirt</h2>
-            <h2 className="text-2xl font-semibold">Rs 299</h2>
-          </div>
+      <div className="flex flex-col w-full sm:w-56 aspect-[3/4]">
+        <img
+          src={`https://firebasestorage.googleapis.com/v0/b/ladieshaat-4fffd.appspot.com/o/${images[0]}?alt=media&token=be38e17e-643b-49e2-908d-cf0f1864690b`}
+          alt={images[0]}
+          className="w-full aspect-square bg-gray-200 object-cover"
+        />
+        <div className="px-2 mt-2">
+          <h2 className="text-xl font-medium">{title}</h2>
+          <h2 className="text-2xl font-semibold">Rs {price}/-</h2>
         </div>
-      </Link>
+      </div>
     </>
   );
 }
