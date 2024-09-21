@@ -14,9 +14,7 @@ export default function Category() {
   const [collections, setCollections] = useState([]);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
       getCollections();
-    }
   }, []);
   const getCollections = async () => {
       const querySnapshot = await getDocs(collection(db, "categories"));
