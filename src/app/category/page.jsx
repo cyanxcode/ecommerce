@@ -19,7 +19,6 @@ export default function Category() {
     }
   }, []);
   const getCollections = async () => {
-    if (typeof window !== "undefined") {
       const querySnapshot = await getDocs(collection(db, "categories"));
 
       const productData = querySnapshot.docs.map((doc) => ({
@@ -31,7 +30,7 @@ export default function Category() {
       );
       setCollections(filteredData);
     }
-  };
+  
   return (
     <>
       <div className="w-full h-16 flex items-center gap-12 justify-between border-b border-zinc-300 px-10 ">
