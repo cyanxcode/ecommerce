@@ -1,5 +1,4 @@
 "use client";
-
 import Cards from "@/components/Category/Cards";
 import Link from "next/link";
 import { db, app } from "@/lib/firebase";
@@ -15,23 +14,22 @@ export default function Category() {
   const title = searchParams.get("group");
   const [collections, setCollections] = useState<any>([]);
   const [docData, setDocData] = useState(null);
-  if (typeof window !== "undefined") {
-    useEffect(() => {
-      getCollections();
-    }, []);
-    const getCollections = async () => {
-      const querySnapshot = await getDocs(collection(db, "categories"));
 
-      const productData = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      const filteredData = productData.filter(
-        (x: any) => x.group == title?.toLowerCase()
-      );
-      setCollections(filteredData);
-    };
-  }
+  useEffect(() => {
+    getCollections();
+  }, []);
+  const getCollections = async () => {
+    const querySnapshot = await getDocs(collection(db, "categories"));
+
+    const productData = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    const filteredData = productData.filter(
+      (x: any) => x.group == title?.toLowerCase()
+    );
+    setCollections(filteredData);
+  };
   return (
     <>
       <div className="w-full h-16 flex items-center gap-12 justify-between border-b border-zinc-300 px-10 ">
