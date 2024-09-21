@@ -7,17 +7,16 @@ import { useSearchParams } from "next/navigation";
 import { IoArrowBack, IoBagOutline } from "react-icons/io5";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-if (typeof window !== "undefined") {
-  // Code that references window here
-}
 export default function Category() {
   const searchParams = useSearchParams();
 
   const title = searchParams.get("group");
-  const [collections, setCollections] = useState<any>([]);
+  const [collections, setCollections] = useState([]);
 
   useEffect(() => {
-    getCollections();
+    if (typeof window !== "undefined") {
+      getCollections();
+    }
   }, []);
   const getCollections = async () => {
     if (typeof window !== "undefined") {
@@ -48,7 +47,7 @@ export default function Category() {
         {collections.map((group) => {
           return (
             <Link key={group.id} href={`/${group.url}?type=${group.title}`}>
-              <Cards img="images/BLACK.jpg" key={group.id} text={group.title} />
+              <Cards img="images/BLACK.jpg" text={group.title} />
             </Link>
           );
         })}
