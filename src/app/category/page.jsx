@@ -43,7 +43,7 @@ export default function Category() {
       <div className=" grid grid-cols-2 sm:grid-cols-auto-fill-200 justify-evenly gap-10 flex-wrap px-10">
         {collections.map((group) => {
           return (
-            <Link key={group.id} href={`/${group.url}?type=${group.title}`}>
+            <Link key={group.id} href={`/${group.url}?type=${group.title}&tag=${group.tag}`}>
               <Cards img="images/BLACK.jpg" text={group.title} />
             </Link>
           );

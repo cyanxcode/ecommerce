@@ -5,10 +5,10 @@ export default function Card() {
     <>
       <CarouselItem className="pl-4">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mx-5">
-          <Cards img="" text="Oversized Tshirt" />
-          <Cards img="" text="Oversized Tshirt" />
-          <Cards img="" text="Oversized Tshirt" />
-          <Cards img="" text="Oversized Tshirt" />
+          <Cards img="BLACK.jpg" text="Oversized Tshirt" />
+          <Cards img="BLACK.jpg" text="Oversized Tshirt" />
+          <Cards img="BLACK.jpg" text="Oversized Tshirt" />
+          <Cards img="BLACK.jpg" text="Oversized Tshirt" />
         </div>
       </CarouselItem>
     </>

@@ -7,8 +7,7 @@ export default function Chipsbar() {
         <Chips next="Mens">Mens</Chips>
         <Chips next="Womens">Womens</Chips>
         <Chips next="Kids">Kids</Chips>
-        <Chips next="Oversized">Oversized</Chips>
-        <Chips next="Shoes">Shoes</Chips>
+        <Chips next="Coorporate">Coorporate Products</Chips>
       </div>
     </>
   );
