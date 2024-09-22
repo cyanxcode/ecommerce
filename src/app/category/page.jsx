@@ -10,9 +10,9 @@ import { useEffect, useState } from "react";
 export default function Category() {
   const searchParams = useSearchParams();
   const title = searchParams.get("group");
-  
-  const [collections, setCollections] = useState([]);
 
+  const [collections, setCollections] = useState([]);
+/*
   useEffect(() => {
       getCollections();
   }, []);
@@ -28,7 +28,7 @@ export default function Category() {
       );
       setCollections(filteredData);
     }
-  
+  */
   return (
     <>
       <div className="w-full h-16 flex items-center gap-12 justify-between border-b border-zinc-300 px-10 ">
@@ -41,7 +41,7 @@ export default function Category() {
       </div>{" "}
       <h2 className="text-3xl font-semibold m-10">{title}</h2>
       <div className=" grid grid-cols-2 sm:grid-cols-auto-fill-200 justify-evenly gap-10 flex-wrap px-10">
-        {collections.map((group) => {
+        { collections && collections.map((group) => {
           return (
             <Link key={group.id} href={`/${group.url}?type=${group.title}&tag=${group.tag}`}>
               <Cards img="images/BLACK.jpg" text={group.title} />
