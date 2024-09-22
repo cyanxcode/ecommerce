@@ -1,5 +1,6 @@
+import Image from "next/image";
 interface Props {
-  images: string[];
+  images?: string[];
 }
 import {
   Carousel,
@@ -17,19 +18,22 @@ export default function ProductImage({ images }: Props) {
         className="w-full sm:w-[18rem] md:w-[24rem] cursor-grab"
       >
         <CarouselContent className="">
-          {images.map((image) => {
-            return (
-              <>
-                <CarouselItem className="aspect-square" key={image}>
-                  <img
-                    src={`https://firebasestorage.googleapis.com/v0/b/ladieshaat-4fffd.appspot.com/o/${image}?alt=media&token=be38e17e-643b-49e2-908d-cf0f1864690b`}
-                    className=""
-                    alt="Oversized "
-                  />
-                </CarouselItem>
-              </>
-            );
-          })}
+          {images &&
+            images.map((image) => {
+              return (
+                <>
+                  <CarouselItem className="aspect-square" key={image}>
+                    <Image
+                      src={`https://firebasestorage.googleapis.com/v0/b/ladieshaat-4fffd.appspot.com/o/${image}?alt=media&token=be38e17e-643b-49e2-908d-cf0f1864690b`}
+                      className=""
+                      alt="Oversized "
+                      width={100}
+                      height={100}
+                    ></Image>
+                  </CarouselItem>
+                </>
+              );
+            })}
         </CarouselContent>
       </Carousel>
     </>
