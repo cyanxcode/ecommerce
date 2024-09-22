@@ -14,17 +14,17 @@ export default function List() {
   const tag = searchParams.get("tag");
   const [products, setProducts] = useState<any>([]);
   useEffect(() => {
-    getProduct();
-  }, []);
-  const getProduct = async () => {
-    const querySnapshot = await getDocs(collection(db, `${tag}`));
+    const getProduct = async () => {
+      const querySnapshot = await getDocs(collection(db, `${tag}`));
 
-    const productData = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-    setProducts(productData);
-  };
+      const productData = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setProducts(productData);
+    };
+    getProduct();
+  }, [tag]);
 
   return (
     <>

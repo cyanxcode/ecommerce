@@ -15,7 +15,7 @@ export default function Category() {
 
   useEffect(() => {
       getCollections();
-  }, []);
+  }, [title]);
   const getCollections = async () => {
       const querySnapshot = await getDocs(collection(db, "categories"));
 
