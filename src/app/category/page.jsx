@@ -12,7 +12,7 @@ export default function Category() {
   const title = searchParams.get("group");
 
   const [collections, setCollections] = useState([]);
-/*
+
   useEffect(() => {
       getCollections();
   }, []);
@@ -28,7 +28,7 @@ export default function Category() {
       );
       setCollections(filteredData);
     }
-  */
+  
   return (
     <>
       <div className="w-full h-16 flex items-center gap-12 justify-between border-b border-zinc-300 px-10 ">
