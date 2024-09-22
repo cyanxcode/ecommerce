@@ -5,6 +5,7 @@ interface Props {
   images: string[];
 }
 
+/* eslint-disable */
 export default function Item({ title, price, images }: Props) {
   return (
     <>

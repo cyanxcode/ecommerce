@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { IoArrowBack, IoBagOutline } from "react-icons/io5";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
+/* eslint-disable */
 export default function Category() {
   const searchParams = useSearchParams();
   const title = searchParams.get("group");

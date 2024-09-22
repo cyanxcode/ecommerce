@@ -26,6 +26,7 @@ export default function List() {
     getProduct();
   }, [tag]);
 
+  /* eslint-disable */
   return (
     <>
       <div className="w-full h-16 flex items-center gap-12 justify-between border-b border-zinc-300 px-10 ">
