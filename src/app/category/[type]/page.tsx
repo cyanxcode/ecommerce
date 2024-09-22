@@ -4,7 +4,7 @@ import { IoArrowBack, IoBagOutline } from "react-icons/io5";
 import Item from "./Item";
 import Footer from "@/components/Footer";
 import { useSearchParams } from "next/navigation";
-import { db, app } from "@/lib/firebase";
+import { db } from "@/lib/firebase";
 import { getDocs, collection } from "firebase/firestore";
 import { useEffect, useState } from "react";
 export default function List() {

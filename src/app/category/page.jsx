@@ -9,8 +9,8 @@ import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 export default function Category() {
   const searchParams = useSearchParams();
-
   const title = searchParams.get("group");
+  
   const [collections, setCollections] = useState([]);
 
   useEffect(() => {
